@@ -1,0 +1,43 @@
+﻿@model Entity.Concrete.Film
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Film Kaydet</title>
+</head>
+<body>
+    @using (Html.BeginForm("Addfilm", "Film", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+         <br />
+        <label>Film Ad</label><br />
+        @Html.TextBoxFor(x=>x.Name)<br />
+        @Html.ValidationMessageFor(x => x.Name, "", new { @style = "color:red" })
+         <br />
+ 
+        <label>Film Türü</label><br />
+        @Html.TextBoxFor(x => x.Genre)<br />
+        @Html.ValidationMessageFor(x => x.Genre, "", new { @style = "color:red" })
+        <br />
+ 
+        <label>Film Yılı</label><br />
+        @Html.TextBoxFor(x => x.Year)<br />
+        @Html.ValidationMessageFor(x => x.Year, "", new { @style = "color:red" })
+        <br />
+ 
+        <label>Film Salon Numarası</label><br />
+        @Html.TextBoxFor(x => x.CinemaId)<br />
+        @Html.ValidationMessageFor(x => x.CinemaId, "", new { @style = "color:red" })
+         <br />
+          <label>Film Yapımcısı</label><br />
+         @Html.TextBoxFor(x => x.Director)<br />
+        @Html.ValidationMessageFor(x => x.Director, "", new { @style = "color:red" })
+     
+       <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+    }
+</body>
+</html>

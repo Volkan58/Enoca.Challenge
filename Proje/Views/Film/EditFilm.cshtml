@@ -1,0 +1,37 @@
+﻿@model Entity.Concrete.Film
+@{
+    Layout = null;
+}
+
+  <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+
+                <p class="card-description"> Yeni Film Güncelleme Paneli </p>
+                <form class="forms-sample" method="post">
+                    <div class="form-group">
+                        @Html.HiddenFor(x => x.Id)
+                        <label>Film Ad</label>
+                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Film Türü</label>
+                        @Html.TextBoxFor(x => x.Genre, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                       
+                        <label>Yapımcı</label>
+                        @Html.TextBoxFor(x => x.Director, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Film Yılı</label>
+                        @Html.TextBoxFor(x => x.Year, new { @class = "form-control" })
+                    </div>
+                    
+
+                    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                    <button class="btn btn-dark">İptal</button>
+                </form>
+            </div>
+        </div>
+    </div>
